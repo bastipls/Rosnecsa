@@ -8,9 +8,22 @@ from django.urls import reverse
 
 def login_view(request):
     context = {}
-
+    if request.method == 'POST':
+        username = request.POST.get('txtuser',True)
+        password = request.POST['txtpass']
+        user = authenticate(request,username=username ,password = password)
+        if user: 
+            login(request,user)
+            return HttpResponseRedirect(reverse('crear_folio'))
+        else:
+            context["error"] = "Credenciales Incorrectas"
+            return render(request, 'rosnecsa/login.html',context)    
     return render(request , 'rosnecsa/login.html',context)
-
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+    return redirect('login')
+    
 def registro_inicial(request):
 
     context = {}
