@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-container">
+        <a href="index.html" class="container-icon">
+         
+            <p class="icon-text">ROSNECSA</p>
+        </a>
+        <span class="icon-bars" id="btn-menu"></span>
+        <nav id="navegador">
+            <ul>
+            
+                <li><a href="index.html" class="item-link">Inicio</a></li>
+                <li><a href="registro.html" class="item-link">Registro</a></li>
+                <li><a href="mapa.html" class="item-link">Mapa</a></li>
+                <li><a href="#" class="item-link">Configuracion</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="general-container">
+        <form class="item-register">
+            <div class="item-title">
+                <span class="icon-tools"></span>
+                <h2>Orden:</h2>
+            </div>
+            <div class="item-input">
+                <label for="txtname">Nombres:</label>
+                <input id="txtname" name="txtname" placeholder="Ingrese nombre" type="text">
+            </div>
+            <div class="item-input">
+                <label for="txtlastname">Apellidos:</label>
+                <input id="txtlastname" name="txtlastname" placeholder="Ingrese apellido" type="text">
+            </div>
+            <div class="item-input">
+                <label for="txtlastname">Fecha:</label>
+                <input id="txtlastname" name="txtlastname" placeholder="Ingrese apellido" type="text">
+            </div>
+            <div class="item-input">
+                <label for="txthorainicio">Hora inicio:</label>
+                <input id="txtphone" name="txtphone" placeholder="ej:123456789" type="number">
+            </div>
+            <div class="item-input">
+                <label for="txthoratermino">Hora Trmino:</label>
+                <input id="txtphone" name="txtphone" placeholder="ej:123456789" type="number">
+            </div>
+            <div class="item-input">
+                <label for="txthoratermino">Codigo ascensor:</label>
+                <input id="txtphone" name="txtphone" placeholder="ej:123456789" type="number">
+            </div>
+            <div class="item-input">
+                <label for="txthoratermino">Fallas detectadas:</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="item-input">
+                <label for="txthoratermino">Reparaciones efectuadas:</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="item-input">
+                <label for="txthoratermino">Piezas cambiadas:</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="item-input">
+                <label for="txthoratermino">Receptor trabajo:</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+        
+            
+            <div class="item-input">
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>

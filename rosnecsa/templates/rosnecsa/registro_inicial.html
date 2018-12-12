@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register_inital.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="general-container">
+        <form class="item-register">
+            <div class="item-title">
+                <span class="icon-tools"></span>
+                <h2>Registro Tecnicos:</h2>
+            </div>
+            <div class="item-input">
+                <label for="txtrut">Rut:</label>
+                <input id="txtrut" name="txtrut" placeholder="ej:12345678-9" type="text">
+            </div>
+
+            <div class="item-input">
+                <label for="txtname">Nombre:</label>
+                <input id="txtname" name="txtname" placeholder="Ingrese apellido" type="text">
+            </div>
+            <div class="item-input">
+                <label for="txtlastname">Apellido:</label>
+                <input id="txtlastname" name="txtlastname" placeholder="Ingrese apellido" type="text">
+            </div>
+            <div class="item-input">
+                <label for="txtemail">Email:</label>
+                <input id="txtemail" name="txtemail" placeholder="Ingrese email" type="text">
+            </div>
+            <div class="item-input">
+                <label for="txtpass">Ingrese contraseña:</label>
+                <input id="txtpass" name="txtpass" placeholder="*************" type="password">
+            </div>
+            <div class="item-input">
+                <label for="txtpass2">Repita contraseña:</label>
+                <input id="txtpass2" name="txtpass" placeholder="*************" type="password">
+            </div>
+         
+
+            <div class="item-input">
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>

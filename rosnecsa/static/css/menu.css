@@ -1,0 +1,167 @@
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    height: 7vh;
+    background: #23282D;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index:2;
+   
+
+}
+
+.container-icon {
+    height: 30px;
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.icon-bicycle {
+    font-size: 25px;
+    height: 25px;
+    margin-left: 6px;
+
+
+}
+
+.icon-text {
+    font-size: 20px;
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.icon-bars {
+    font-size: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 6px;
+    color:whitesmoke;
+}
+
+.icon-bars:hover {
+    color: whitesmoke;
+}
+
+nav {
+    position: absolute;
+    top: 7vh;
+    text-align: left;
+    background: red;
+    transition: 1s all;
+    left: -100%;
+    width: 300px;
+   
+  
+
+}
+
+.move {
+    transition: 1s all;
+    left: 0%;
+}
+
+ul {
+    list-style: none;
+    width: 60%;
+    background: rgba(60,72,84);
+   
+
+}
+
+.item-link {
+    text-decoration: none;
+    padding: 16px;
+    display: block;
+    color: whitesmoke;
+    background: rgba(60,72,84);
+    width: 300px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    transition: .2s all;
+
+   
+
+}
+
+.item-link:hover {
+    box-shadow: 5px 2px 5px #888888;
+    transform: scale(1.1);
+    transition: .2s all;
+
+}
+
+.item-user {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item-user img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 1px 5px #888888;
+    border: 7px solid rgba(255, 255, 255, .4)
+}
+
+.item-user p {
+    font-weight: bold;
+}
+.menu-container input{
+    
+    cursor: pointer;
+    width: 100%;
+    border-bottom: none;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+#select{
+    background: rgba(255, 70, 17,.8);
+}
+@media screen and (min-width:1000px) {
+    .menu-container input{
+        border-top: none;
+    }
+    nav {
+        position: static;
+        width: auto;
+        min-height: 0;
+
+    }
+
+    .icon-bars {
+        display: none;
+    }
+
+    .item-user {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        width: auto;
+        height: auto;
+    }
+
+    .item-link {
+       
+        background: #23282D;
+        border-top: 0;
+        width: 100%;
+        color:whitesmoke;
+        padding: 14px;
+        height: 7vh;
+       
+    }
+    
+
+}

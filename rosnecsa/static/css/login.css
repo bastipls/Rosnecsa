@@ -1,0 +1,221 @@
+.general-container {
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: calibri, Arial;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #23282d;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
+}
+/*HERE START THE LOGIN*/
+.item-login {
+    width: 350px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    position: relative;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-family:  font-kerning;
+
+}
+
+.item-login-icon {
+    position: absolute;
+    top: -34px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+
+
+}
+
+.item-login-icon .icon-logo {
+    font-size: 70px;
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+    right: 2px;
+    color:whitesmoke;
+    
+}
+
+
+.item-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 250px;
+}
+
+.item-input-input h2 {
+    color: rgba(255, 255, 255, .8);
+    font-size: 30px;
+    position: relative;
+    right: -30px;
+}
+
+.item-input-input {
+    display: flex;
+    justify-content: center;
+     
+    width: 280px;
+    height: 40px;
+    align-items: center;
+    padding-top: 30px;
+
+}
+.item-input-input:nth-child(2) {
+    padding-top: 50px;
+}
+.item-input-input:nth-child(3) {
+    padding-top: 0px;
+    height: 25px;
+    width: 240px;
+    padding-bottom: 15px;
+    justify-content: flex-start;
+    color: rgba(255, 255, 255, .7);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.item-input-input .icon-user {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.item-input-input .icon-user:hover {
+    transform: scale(1.2);
+    transition: all 1.5s;
+}
+
+.item-input-input .icon-unlock-alt {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.item-input-input .icon-unlock-alt:hover {
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+.item-input-input input {
+    margin-left: 8px;
+    border-radius: 5px;
+  
+    height: 30px;
+    font-size: 16px;
+    padding-left: 9px;
+ 
+    
+}
+
+#checkuser {
+    margin-right: 3px
+}
+
+.item-login button {
+    padding: 4px;
+    
+    background-color: #555555;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 245px;
+
+}
+
+.item-login button:hover {
+    border: 2px solid rgba(63, 191, 191);
+    background: rgba(125, 125, 125);
+}
+
+.item-login a {
+    padding-top: 8px;
+    color: rgba(255, 255, 255, .6);
+    
+
+}
+.item-login a:first-child{
+    width: 200px;
+}
+
+#txtuser{
+    position: relative;
+}
+#error-login{
+    position:absolute;
+    bottom: 270px;
+    padding: 6px;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+/*AQUI EMPIEZA LO DE ALERT*/
+/* The alert message box */
+/* .item-alert {
+    position: absolute;
+    top: 6px;
+    z-index: 100;
+} */
+
+/* #alert {
+    padding: 16px;
+    background-color: rgba(244, 67, 54);
+    color: white;
+    border: 2px solid #b5736e;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: transform .5s;
+    transform: scale(.0);
+
+
+} */
+
+/* The close button */
+/* .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+} */
+
+/* When moving the mouse over the close button */
+/* .closebtn:hover {
+    color: black;
+} */

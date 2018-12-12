@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="general-container">
+        <form method="POST" id="item_login" class="item-login">
+            {% csrf_token %}
+            <div class="item-login-icon">
+                <label for="txtuser" class="icon-logo">Rosnecsa</label>
+            </div>
+            <div class="item-input-input">
+                <h2>Iniciar Sesión</h2>
+            </div>
+
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtuser" class="icon-user"></label>
+                    <input id="txtuser" name="txtuser" type="text" required placeholder="Usuario">
+                    <p id="error-login">
+                     <!--{{ error }}-->
+                    </p>
+                </div>
+
+                <div class="item-input-input">
+                    <label for="txtpass" class="icon-unlock-alt"></label>
+                    <input id="txtpass" name="txtpass" type="password" required placeholder="***********">
+                </div>
+                <div class="item-input-input">
+
+                    <a href="#">Iniciar con Facebook</a>
+                    <a href="{% url 'registro_inicial' %}"> Registrate</a>
+                </div>
+                <button type="submit"> Login</button>
+                <!-- <a href="#">¿Olvido su contraseña?</a> -->
+                 </div>
+        </form>
+   
+
+
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>
