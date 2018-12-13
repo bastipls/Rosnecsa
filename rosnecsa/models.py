@@ -38,7 +38,7 @@ class Folio(models.Model):
     piezas_cambiadas_folio = models.TextField(max_length=150)
     receptor_trabajo_folio = models.ForeignKey(Tecnico, blank=False,null=False,on_delete=models.CASCADE)
 
-    def __str__(self):
+    def __int__(self):
         return self.n_folio
 
 class Empresa_tecnico (models.Model):

@@ -12,6 +12,11 @@
     color: whitesmoke;
 
 }
+.item-register li{
+    color: red;
+    list-style-type:disc;
+    background: none;
+}
 .general-container{
   
     background: #23282D;
@@ -61,12 +66,14 @@
     text-align: center;
   
 }
+
 .item-input textarea{
     width: 200px;
     height: 30px;
     border-radius: 15px;
     resize: vertical;
     max-height: 50px;
+    text-align: center;
 }
 .item-input input:focus {
     border: 2px solid #0C0;

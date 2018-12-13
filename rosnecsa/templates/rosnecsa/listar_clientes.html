@@ -40,21 +40,34 @@
                <div class="table-container">
                 <table class="table-client"><!--Y29waW9u-->
                     <tr>
-
                         <th>ID:</th>
                         <th>Nombre:</th>
                         <th>Comuna:</th>
                         <th>Correo:</th>
                         <th>Confirmar</th>
                     </tr>
+                    {% if user.is_staff %}
+                    {% for cliente in clientes %}
                     <tr>
-                        <td>20057170-3</td>
-                        <td>Bastian</td>
-                        <td>2°A</td>
-                        <td>22-11-2018</td>
-                        <td><button>Aattender</button></td>
+                        <td>{{ cliente.id_cliente }}</td>
+                        <td>{{ cliente.nombre_cliente }}</td>
+                        <td>{{ cliente.comuna_cliente }}</td>
+                        <td>{{ cliente.correo_cliente }}</td>
+                        <td><a href="{% url 'crear_folio' %}">Orden</a></td>
                     </tr>
-                 
+                    {% endfor %}
+                    {% endif %}
+                    {% if user.is_superuser %}
+                    {% for clientes in todos_clientes %}
+                    <tr>
+                        <td>{{ clientes.id_cliente }}</td>
+                        <td>{{ clientes.nombre_cliente }}</td>
+                        <td>{{ clientes.comuna_cliente }}</td>
+                        <td>{{ clientes.correo_cliente }}</td>
+                        <td><a href="{% url 'crear_folio' %}">Orden</a></td>    
+                    </tr>
+                    {% endfor %}}
+                    {% endif %}
                
             
                 </table>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
@@ -33,50 +33,57 @@
         </nav>
     </div>
     <div class="general-container">
-        <form class="item-register">
+        <form class="item-register" method="post">{% csrf_token %}
             <div class="item-title">
                 <span class="icon-tools"></span>
                 <h2>Orden:</h2>
             </div>
+            {{ form.cliente_folio.errors }}
             <div class="item-input">
-                <label for="txtname">Nombres:</label>
-                <input id="txtname" name="txtname" placeholder="Ingrese nombre" type="text">
+                <label for="{{ form.cliente_folio.id_for_label }}">Nombre Cliente:</label>
+                    {{ form.cliente_folio }}
             </div>
+            {{ form.fecha_folio.errors }}
             <div class="item-input">
-                <label for="txtlastname">Apellidos:</label>
-                <input id="txtlastname" name="txtlastname" placeholder="Ingrese apellido" type="text">
+                <label for="{{ form.fecha_folio.id_for_label }}">Fecha:</label>
+
+                {{ form.fecha_folio }}
             </div>
+            {{ form.hora_inicio_folio.errors }}
             <div class="item-input">
-                <label for="txtlastname">Fecha:</label>
-                <input id="txtlastname" name="txtlastname" placeholder="Ingrese apellido" type="text">
+                <label for="{{ form.hora_inicio_folio.id_for_label }}">Hora inicio:</label>
+               
+                {{ form.hora_inicio_folio }}
             </div>
+            {{ form.hora_termino_folio.errors }}
             <div class="item-input">
-                <label for="txthorainicio">Hora inicio:</label>
-                <input id="txtphone" name="txtphone" placeholder="ej:123456789" type="number">
+                <label for="{{ form.hora_termino_folio.id_for_label }}">Hora Trmino:</label>
+                {{ form.hora_termino_folio }}
             </div>
+            {{ form.codigo_ascensor.errors }}
             <div class="item-input">
-                <label for="txthoratermino">Hora Trmino:</label>
-                <input id="txtphone" name="txtphone" placeholder="ej:123456789" type="number">
+                <label for="{{ form.codigo_ascensor.id_for_label }}">Codigo ascensor:</label>
+               {{ form.codigo_ascensor }}
             </div>
+            {{ form.fallas_detectadas_folio.errors }}
             <div class="item-input">
-                <label for="txthoratermino">Codigo ascensor:</label>
-                <input id="txtphone" name="txtphone" placeholder="ej:123456789" type="number">
+                <label for="{{ form.fallas_detectadas_folio.id_for_label }}">Fallas detectadas:</label>
+                {{ form.fallas_detectadas_folio }}
             </div>
+            {{ form.reparaciones_efectuadas_folio.errors }}
             <div class="item-input">
-                <label for="txthoratermino">Fallas detectadas:</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="{{ form.reparaciones_efectuadas_folio.id_for_label }}">Reparaciones efectuadas:</label>
+                {{ form.reparaciones_efectuadas_folio }}
             </div>
+            {{ form.piezas_cambiadas_folio.errors }}
             <div class="item-input">
-                <label for="txthoratermino">Reparaciones efectuadas:</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="{{ form.piezas_cambiadas_folio.id_for_label }}">Piezas cambiadas:</label>
+               {{ form.piezas_cambiadas_folio }}
             </div>
+            {{ form.receptor_trabajo_folio.errors }}
             <div class="item-input">
-                <label for="txthoratermino">Piezas cambiadas:</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-            </div>
-            <div class="item-input">
-                <label for="txthoratermino">Receptor trabajo:</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="{{ form.receptor_trabajo_folio.id_for_label }}">Receptor trabajo:</label>
+                {{ form.receptor_trabajo_folio }}
             </div>
         
             
