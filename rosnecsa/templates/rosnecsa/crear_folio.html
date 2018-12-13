@@ -57,8 +57,9 @@
             </div>
             {{ form.hora_termino_folio.errors }}
             <div class="item-input">
-                <label for="{{ form.hora_termino_folio.id_for_label }}">Hora Trmino:</label>
-                {{ form.hora_termino_folio }}
+                <label for="{{ form.hora_termino_folio.id_for_label }}">Hora Termino:</label>
+                {{ form.hora_termino_folio  }}
+                {{ value|time:"H:i"}}
             </div>
             {{ form.codigo_ascensor.errors }}
             <div class="item-input">
