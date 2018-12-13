@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register_inital.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-container">
+        <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
+                  <p class="icon-text">ROSNECSA</p>
+        </a>
+        <span class="icon-bars" id="btn-menu"></span>
+        <nav id="navegador">
+            <ul>
+                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
+                <li><a href="#" class="item-link">Folios</a></li>
+                <li>
+                    <form  action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <input class="item-link" type="submit" value="Cerrar Sesion">
+                    </form>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="general-container">
+        <form class="item-register" enctype="multipart/form-data" method="post"> {% csrf_token %}
+            <div class="item-title">
+                <span class="icon-tools"></span>
+                <h2>Asignar Cliente:</h2>
+            </div>
+           <div class="item-input"> 
+                <label for="txtrut">Rut:</label>
+              
+                {{ form.rut_tecnico }}
+            </div>
+
+            <div class="item-input">
+                <label for="txtrut">Cliente:</label>
+              
+                {{ form.cliente }}
+                
+            </div> 
+              
+
+            <div class="item-input">
+                <button type="submit">Asignar</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>

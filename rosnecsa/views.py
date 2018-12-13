@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from rosnecsa.forms import FolioForm
+from rosnecsa.forms import FolioForm,TecnicoForm
 
 
 def login_view(request):
@@ -102,3 +102,21 @@ def crear_folio(request):
         form = FolioForm()           
     context={'form':form}
     return render(request,'rosnecsa/crear_folio.html',context)
+
+def listar_tecnicos(request):
+    tec = Tecnico.objects.all()
+    context = {'tec':tec}
+
+    return render(request,'rosnecsa/listar_tecnicos.html',context)
+def asignar_cliente (request,pk):
+    tecnico = get_object_or_404(Tecnico,pk=pk)
+    if request.method == 'POST':
+        form = TecnicoForm(request.POST,instance=tecnico)
+        if form.is_valid():
+            tecnico = form.save(commit=False)
+            form.save_m2m()
+            return redirect('listar_tecnicos')
+    else:
+        form = TecnicoForm(instance=tecnico)
+    context= {'form':form}
+    return render(request,'rosnecsa/asignar_cliente.html',context)            

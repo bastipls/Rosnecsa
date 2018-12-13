@@ -8,4 +8,6 @@ urlpatterns = [
     path('login/registro_inicial/error',views.error , name="error"),
     path('listar_clientes/',views.listar_clientes, name='listar_clientes'),
     path('crear_folio/',views.crear_folio, name='crear_folio'),
+    path('listar_tecnicos/',views.listar_tecnicos, name= 'listar_tecnicos'),
+    path('listar_tecnicos/<str:pk>/asignar_cliente',views.asignar_cliente, name="asignar_cliente")
 ]

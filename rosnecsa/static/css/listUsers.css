@@ -61,7 +61,7 @@
     margin-right: 3px;
 }
 
-.icon-pencil-square-o {
+.icon-tools {
     color: black;
     margin-right: 4px;
     font-size: 25px;
@@ -71,7 +71,7 @@
     transition: 1s all;
 }
 
-.icon-pencil-square-o:hover,.item-list-name a:hover {
+.icon-tools:hover,.item-list-name a:hover {
     color: rgba(16, 168, 0);
     transform: scale(1.1, 1);
     transition: 1s all;
