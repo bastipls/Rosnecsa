@@ -27,7 +27,7 @@ def logout_view(request):
         logout(request)#Y29waW9u
     return redirect('login')
     
-def registro_inicial(request):
+def registro_inicial(request):#Y29waW9u
     
   
     context = {}
