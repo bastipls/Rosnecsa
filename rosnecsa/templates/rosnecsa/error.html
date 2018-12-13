@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="general-container">
+        <div class="icono">
+            <a href="{% url 'login' %}">
+
+             <span class="icon-tools"></span><!-- Y29waW9u  -->
+            </a>
+            
+        </div>
+        <h1>Rosencsa</h1>
+            
+        <p>Lo sentimos pero no se pudo completar el registro ya que no pertenece a la empresa. </p>
+  
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>
