@@ -117,11 +117,12 @@ ul {
     font-weight: bold;
 }
 .menu-container input{
-    
+    text-align: left;
     cursor: pointer;
-    width: 100%;
+   
     border-bottom: none;
     border: none;
+    width: 300px !important;
     border-top: 1px solid rgba(0, 0, 0, .1);
 }
 #select{
@@ -162,6 +163,9 @@ ul {
         height: 7vh;
        
     }
-    
+    .menu-container input{
+        width: 100% !important;
+        text-align: center ;
+    }
 
 }

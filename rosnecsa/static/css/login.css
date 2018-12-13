@@ -182,6 +182,14 @@ body{
     font-weight: bold;
     font-size: 20px;
 }
+#success-login{
+    position:absolute;
+    bottom: 270px;
+    padding: 6px;
+    color: greenyellow;
+    font-weight: bold;
+    font-size: 20px;
+}
 /*AQUI EMPIEZA LO DE ALERT*/
 /* The alert message box */
 /* .item-alert {

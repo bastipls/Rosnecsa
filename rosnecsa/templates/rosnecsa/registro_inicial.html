@@ -16,7 +16,7 @@
 <body>
 
     <div class="general-container">
-        <form class="item-register">
+        <form class="item-register" method="post"> {% csrf_token %}
             <div class="item-title">
                 <span class="icon-tools"></span>
                 <h2>Registro Tecnicos:</h2>
@@ -42,10 +42,10 @@
                 <label for="txtpass">Ingrese contraseña:</label>
                 <input id="txtpass" name="txtpass" placeholder="*************" type="password">
             </div>
-            <div class="item-input">
+            <!-- <div class="item-input">
                 <label for="txtpass2">Repita contraseña:</label>
                 <input id="txtpass2" name="txtpass" placeholder="*************" type="password">
-            </div>
+            </div> -->
          
 
             <div class="item-input">

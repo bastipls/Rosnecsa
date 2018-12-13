@@ -15,18 +15,20 @@
 
 <body>
     <div class="menu-container">
-        <a href="index.html" class="container-icon">
-         
-            <p class="icon-text">ROSNECSA</p>
+        <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
+                  <p class="icon-text">ROSNECSA</p>
         </a>
         <span class="icon-bars" id="btn-menu"></span>
         <nav id="navegador">
             <ul>
-            
-                <li><a href="index.html" class="item-link">Inicio</a></li>
-                <li><a href="registro.html" class="item-link">Registro</a></li>
-                <li><a href="mapa.html" class="item-link">Mapa</a></li>
-                <li><a href="#" class="item-link">Configuracion</a></li>
+                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
+                <li><a href="#" class="item-link">Folios</a></li>
+                <li>
+                    <form  action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <input class="item-link" type="submit" value="Cerrar Sesion">
+                    </form>
+                    </li>
             </ul>
         </nav>
     </div>
