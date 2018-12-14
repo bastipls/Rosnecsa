@@ -1,0 +1,240 @@
+
+.item-register {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    background: #282e35;;
+    min-height: 100vh;
+    position: relative;
+    color: whitesmoke
+
+}
+.general-container{
+    margin-top: 0;
+    background: #23282D;
+}
+.item-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.item-title .icon-tools {
+    background:  #23282D;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+ 
+}
+
+.item-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top:8px;
+    padding-bottom: 5px;
+}
+
+.item-input label {
+    width: 113px;
+}
+
+.item-input input,select {
+    width: 130px;
+    border-radius: 15px;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    outline: none;
+    padding: 5px;
+    text-align: center;
+  
+}
+.item-input textarea{
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    resize: vertical;
+    max-height: 50px;
+}
+.item-input input:focus {
+    border: 2px solid #0C0;
+}
+.item-input:last-child{
+    margin-top: 10px;
+    padding-bottom: 
+}
+.item-input button{
+
+    background-color: #555555;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+   
+}
+.item-input button:hover {
+    background-color:  rgba(125, 125, 125);
+    color: white;
+    border:2px solid #0C0;
+}
+.item-register a{
+    position: absolute;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    right: 10px;
+    bottom: 20px;
+    cursor: pointer;
+}
+/* lo de list */
+.container-list {
+    width: 95%;
+    height: 93vh;
+    margin-top: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #282e35;
+  
+
+}
+
+.item-list {
+    
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, .7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+
+.item-list-name {
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border: .5px solid rgba(0, 0, 0, .3);
+  
+
+}
+.item-list-name a {
+    text-decoration: none;
+    text-decoration-style: none;
+    width: 30px;
+    height: 30px;
+}
+
+#name{
+    margin-right: 3px;
+}
+.icon-pencil-square-o {
+    color:black;
+    margin-right: 4px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 1s all;
+}
+
+.icon-pencil-square-o:hover,.item-list-name a:hover {
+    color: rgba(16, 168, 0);
+    transform: scale(1.1, 1);
+    transition: 1s all;
+}
+
+
+.item-list-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.item-list-data {
+    box-sizing: border-box;
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid rgba(0, 0, 0, .4);
+}
+.item-list-data:nth-child(17){
+    border-bottom-left-radius: 18px;
+}
+.item-list-data:nth-child(18){
+    border-bottom-right-radius: 18px;
+}
+@media screen and (min-width:600px) {
+    .item-list {
+        width: 85%;
+        margin: 10px;
+
+    }
+    .container-list{
+        width: 400px;
+    }
+
+}
+
+@media screen and (min-width:1250px) {
+    .container-list {
+        justify-content: center;
+        width: 600px;
+    }
+
+    .item-list {
+        width: 75%;
+        margin-right: 5px;
+        margin-left: 10px;
+
+
+    }
+}
+/*lo de list*/
+@media screen and (min-width:700px){
+    .item-register{
+        width: 50%;
+    }
+}
+@media screen and (min-width:1000px){
+    .item-input input,select{
+        width: 200px;
+    }
+ 
+    .item-input{
+        margin-top: 2px;
+    }
+    .item-register a{
+      
+        font-size: 18px;
+    
+        right: 45px;
+        bottom: 20px;
+    }
+}

@@ -119,4 +119,8 @@ def asignar_cliente (request,pk):
     else:
         form = TecnicoForm(instance=tecnico)
     context= {'form':form}
-    return render(request,'rosnecsa/asignar_cliente.html',context)            
+    return render(request,'rosnecsa/asignar_cliente.html',context)         
+
+def listar_folios(request):
+    context = {}
+    return render(request,'rosnecsa/listar_folios.html',context)

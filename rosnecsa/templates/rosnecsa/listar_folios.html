@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista folios</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/listFolios.css' %}">
+</head>
+
+<body>
+    <div class="menu-container">
+        <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
+                  <p class="icon-text">ROSNECSA</p>
+        </a>
+        <span class="icon-bars" id="btn-menu"></span>
+        <nav id="navegador">
+            <ul>
+                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
+                <li><a href="#" class="item-link">Folios</a></li>
+                <li>
+                    <form  action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <input class="item-link" type="submit" value="Cerrar Sesion">
+                    </form>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="general-container">
+
+    <div class="container-gen">
+          <h1>Folios</h1>
+   
+               <div class="table-container">
+                <table class="table-client">
+                    <tr>
+
+                        <th>ID:</th>
+                        <th> Cliente:</th>
+                        <th>Hora Termino:</th>
+                        <th>Receptor Trabajo:</th>
+                        <th>Confirmar</th>
+                    </tr>
+                
+                         <tr>
+                        <td>20057170-3</td>
+                        <td>Bastian</td>
+                        <td>2°A</td>
+                        <td>22-11-2018</td>
+                        <td><a href="#">Ver</a></td>
+                    </tr>
+                   
+               
+            
+                </table>
+            </div>
+
+   
+    </div>
+
+    </div>
+  
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>
