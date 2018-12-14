@@ -9,7 +9,7 @@ class Cliente (models.Model):
     apellidos_cliente = models.CharField(max_length=30,null=True,blank=True)
     comuna_cliente = models.CharField(max_length=30)        
     telefono_cliente = models.IntegerField(blank=True,null=True)
-    correo_cliente = models.CharField(max_length=30)
+    correo_cliente = models.EmailField(max_length=30)
 
     def __str__(self):
         return self.nombre_cliente 
@@ -33,9 +33,9 @@ class Folio(models.Model):
     hora_inicio_folio = models.TimeField(default=timezone.now , blank=False,null=False)
     hora_termino_folio = models.TimeField(blank= False,null=False)
     codigo_ascensor = models.CharField(max_length=30,blank=False,null=False)
-    fallas_detectadas_folio = models.TextField(max_length=150)
-    reparaciones_efectuadas_folio = models.TextField(max_length=150)
-    piezas_cambiadas_folio = models.TextField(max_length=150)
+    fallas_detectadas_folio = models.TextField(max_length=150,blank=False,null=True)
+    reparaciones_efectuadas_folio = models.TextField(max_length=150,blank=True,null=True)
+    piezas_cambiadas_folio = models.TextField(max_length=150,blank=True,null=True)
     receptor_trabajo_folio = models.ForeignKey(Tecnico, blank=False,null=False,on_delete=models.CASCADE)
 
     def __int__(self):

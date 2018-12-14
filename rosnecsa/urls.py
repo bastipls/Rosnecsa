@@ -10,5 +10,5 @@ urlpatterns = [
     path('crear_folio/',views.crear_folio, name='crear_folio'),
     path('listar_tecnicos/',views.listar_tecnicos, name= 'listar_tecnicos'),
     path('listar_tecnicos/<str:pk>/asignar_cliente',views.asignar_cliente, name="asignar_cliente"),
-    path('listar_folios/',views.listar_folios,name='listar_folios')
+    path('crear_cliente/',views.crear_cliente,name="crear_cliente") 
 ]

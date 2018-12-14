@@ -1,3 +1,4 @@
+
 .container-gen {
 
 
@@ -17,8 +18,8 @@
 }
 .table-client tr td a{
     text-decoration: none;
-    width:50px;
-    height: 48px;
+    min-width:50px;
+    min-height: 48px;
     display: block;
     text-align: center;
     border-spacing: 0;
@@ -45,10 +46,10 @@
 /*Tablas */
 .table-client {
     margin: 20px;
-    font-size: .85em;
+    font-size: .95em;
     border: 1px solid rgba(255, 255, 255, .6);
     color: rgba(255, 255, 255, .8);
-    min-width: 600px;
+    min-width: 710px;
     margin-right: auto;
     margin-left: auto;
     transition: all .7s;

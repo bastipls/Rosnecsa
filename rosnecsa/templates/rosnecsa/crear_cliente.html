@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cliente</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_client.css' %}">
+    <link href="https://file.myfontastic.com/K9B3SyNkABQPJah8pPK9eE/icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-container">
+        <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
+                  <p class="icon-text">ROSNECSA</p>
+        </a>
+        <span class="icon-bars" id="btn-menu"></span>
+        <nav id="navegador">
+            <ul>
+                    <li><a    class="item-link item-welcome">Bienvenido! {{ request.user.first_name}} </a></li>
+                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
+                <li><a href="#" class="item-link">Folios</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'listar_tecnicos' %}" class="item-link">Asignar</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="{% url 'crear_cliente' %}" id="select" class="item-link">Crear cliente</a></li>
+                {% endif %}
+              
+                <li>
+                    <form  action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <input class="item-link" type="submit" value="Cerrar Sesion">
+                    </form>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="general-container">
+        <form class="item-register" method="post">{% csrf_token %}
+            <div class="item-title">
+                <span class="icon-tools"></span>
+                <h2>Crear cliente:</h2>
+            </div>
+            {{ form.nombre_cliente.errors }}
+            <div class="item-input">
+                <label for="{{ form.nombre_cliente.id_for_label }}">Nombre:</label>
+                   {{ form.nombre_cliente }}
+            </div>
+            {{ form.apellidos_cliente.errors }}
+            <div class="item-input">
+                <label for="{{ form.apellios_cliente.id_for_label }}">Apellido:</label>
+                {{ form.apellidos_cliente }}
+            
+            </div>
+            {{ form.comuna_cliente.errors }}
+            <div class="item-input">
+                <label for="{{ form.comuna_cliente.id_for_label }}">Comuna:</label>
+               {{ form.comuna_cliente }}
+               
+            </div>
+            {{ form.telefono_cliente.errors }}
+            <div class="item-input">
+                <label for="{{ form.comuna_cliente.id_for_label }}">Telefono:</label>
+                {{  form.telefono_cliente }}
+            </div>
+            {{ form.correo_cliente.errors }}
+            <div class="item-input">
+                <label for="{{ form.correo_cliente.id_for_label }}">Correo:</label>
+             {{ form.correo_cliente }}
+            </div>
+           
+        
+        
+            
+            <div class="item-input">
+                <button type="submit">Crear</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>
