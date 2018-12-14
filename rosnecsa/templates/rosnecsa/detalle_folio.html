@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle folio</title>
+    <title>Detalle folio {{ folio.n_folio }}</title>
     <link rel="icon" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
@@ -16,13 +16,21 @@
 <body>
     <div class="menu-container">
         <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
-                  <p class="icon-text">ROSNECSA</p>
+                    <p class="icon-text">ROSNECSA</p>
         </a>
         <span class="icon-bars" id="btn-menu"></span>
         <nav id="navegador">
             <ul>
-                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
-                <li><a href="#" class="item-link">Folios</a></li>
+                 <li><a    class="item-link item-welcome">Bienvenido! {{ request.user.first_name}} </a></li>
+                <li><a href="{% url 'listar_clientes' %}"   class="item-link">Clientes</a></li>
+                <li><a href="{% url 'listar_folios' %}" id="select" class="item-link">Folios</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'listar_tecnicos' %}" class="item-link">Asignar</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="{% url 'crear_cliente' %}" class="item-link">Crear cliente</a></li>
+                {% endif %}
+        
                 <li>
                     <form  action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
@@ -33,47 +41,52 @@
         </nav>
     </div>
     <div class="general-container">
+            
          <div id="insert" class="container-list">
-
+                <h2> Detalle folio</h2>
             <div class="item-list">
                 <div class="item-list-name">
                    <a href="#"> <span class="icon-pencil-square-o"></span></a>
-                    <p id="name">Aqui </p>
-                    <p> apellido</p>
+                    <p id="name">{{ folio.n_folio }} </p>
+                   
                 </div>
                 <div class="item-list-info">
 
                     <div class="item-list-data">Cliente:</div>
                     <div class="item-list-data">
-                        <p id="">6 </p>
+                        <p id="">{{  folio.cliente_folio }} </p>
                     </div>
                     <div class="item-list-data">Fecha:</div>
                     <div class="item-list-data">
-                        <p id="">1°A</p>
+                        <p id="">{{ folio.fecha_folio }}</p>
                     </div>
                     <div class="item-list-data">Hora inicio:</div>
                     <div class="item-list-data">
-                        <p id="">70</p>
+                        <p id="">{{ folio.hora_inicio_folio }}</p>
                     </div>
                     <div class="item-list-data">Hora termino:</div>
                     <div class="item-list-data">
-                        <p id="">170</p>
+                        <p id="">{{ folio.hora_termino_folio }}</p>
+                    </div>
+                    <div class="item-list-data">Codigo:</div>
+                    <div class="item-list-data">
+                        <p id="">{{ folio.codigo_ascensor }}</p>
                     </div>
                     <div class="item-list-data">Fallas:</div>
                     <div class="item-list-data">
-                        <p id="">170</p>
+                        <p id="">{{ folio.fallas_detectadas_folio }}</p>
                     </div>
                     <div class="item-list-data">Reparaciones:</div>
                     <div class="item-list-data">
-                        <p id="">170</p>
+                        <p id="">{{ folio.reparaciones_efectuadas_folio }}</p>
                     </div>
                     <div class="item-list-data">Piezas cambiadas:</div>
                     <div class="item-list-data">
-                        <p id="">170</p>
+                        <p id="">{{ folio.piezas_cambiadas_folio }}</p>
                     </div>
                     <div class="item-list-data">Receptor Trabajo:</div>
                     <div class="item-list-data">
-                        <p id="">170</p>
+                        <p id="">{{ folio.receptor_trabajo_folio }}</p>
                     </div>
                    
                 </div>

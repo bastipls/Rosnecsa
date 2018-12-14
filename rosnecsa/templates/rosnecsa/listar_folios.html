@@ -16,13 +16,21 @@
 <body>
     <div class="menu-container">
         <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
-                  <p class="icon-text">ROSNECSA</p>
+                    <p class="icon-text">ROSNECSA</p>
         </a>
         <span class="icon-bars" id="btn-menu"></span>
         <nav id="navegador">
             <ul>
-                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
-                <li><a href="#" class="item-link">Folios</a></li>
+                 <li><a    class="item-link item-welcome">Bienvenido! {{ request.user.first_name}} </a></li>
+                <li><a href="{% url 'listar_clientes' %}"   class="item-link">Clientes</a></li>
+                <li><a href="{% url 'listar_folios' %}" id="select" class="item-link">Folios</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'listar_tecnicos' %}" class="item-link">Asignar</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="{% url 'crear_cliente' %}" class="item-link">Crear cliente</a></li>
+                {% endif %}
+        
                 <li>
                     <form  action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
@@ -47,17 +55,29 @@
                         <th>Receptor Trabajo:</th>
                         <th>Confirmar</th>
                     </tr>
-                
+                {% if user.is_staff %}
+                {% for folio in folios %}
                          <tr>
-                        <td>20057170-3</td>
-                        <td>Bastian</td>
-                        <td>2°A</td>
-                        <td>22-11-2018</td>
-                        <td><a href="#">Ver</a></td>
+                        <td>{{ folio.n_folio }}</td>
+                        <td>{{ folio.cliente_folio }}</td>
+                        <td>{{ folio.hora_termino_folio }}</td>
+                        <td>{{ folio.receptor_trabajo_folio }}</td>
+                        <td><a href="{% url 'detalle_folio' pk=folio.pk %}">Ver</a></td>
                     </tr>
-                   
-               
-            
+                {% endfor %}
+                {% endif %}
+                    
+                {% if user.is_superuser %}
+                {% for folio in todos_folios %}
+                      <tr>
+                        <td>{{ folio.n_folio }}</td>
+                        <td>{{ folio.cliente_folio }}</td>
+                        <td>{{ folio.hora_termino_folio }}</td>
+                        <td>{{ folio.receptor_trabajo_folio }}</td>
+                        <td><a href="{% url 'detalle_folio' pk=folio.pk %}">Ver</a></td>
+                 </tr>
+                {% endfor %}
+                {% endif %}
                 </table>
             </div>
 

@@ -1,106 +1,9 @@
 
-.item-register {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    width: 80%;
-    height: auto;
-    background: #282e35;;
-    min-height: 100vh;
-    position: relative;
-    color: whitesmoke
-
-}
 .general-container{
     margin-top: 0;
     background: #23282D;
 }
-.item-title {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
 
-.item-title .icon-tools {
-    background:  #23282D;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
- 
-}
-
-.item-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top:8px;
-    padding-bottom: 5px;
-}
-
-.item-input label {
-    width: 113px;
-}
-
-.item-input input,select {
-    width: 130px;
-    border-radius: 15px;
-    border: 1px solid #C2C2C2;
-    box-shadow: 1px 1px 4px #EBEBEB;
-    outline: none;
-    padding: 5px;
-    text-align: center;
-  
-}
-.item-input textarea{
-    width: 200px;
-    height: 30px;
-    border-radius: 15px;
-    resize: vertical;
-    max-height: 50px;
-}
-.item-input input:focus {
-    border: 2px solid #0C0;
-}
-.item-input:last-child{
-    margin-top: 10px;
-    padding-bottom: 
-}
-.item-input button{
-
-    background-color: #555555;
-    color: white;
-    font-size: 16px;
-    padding: 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-   
-}
-.item-input button:hover {
-    background-color:  rgba(125, 125, 125);
-    color: white;
-    border:2px solid #0C0;
-}
-.item-register a{
-    position: absolute;
-    color: red;
-    font-size: 15px;
-    font-weight: bold;
-    right: 10px;
-    bottom: 20px;
-    cursor: pointer;
-}
 /* lo de list */
 .container-list {
     width: 95%;
@@ -111,12 +14,14 @@
     justify-content: center;
     align-items: center;
     background: #282e35;
+    flex-direction: column;
+    color: whitesmoke;
   
 
 }
 
 .item-list {
-    
+    color: black;
     width: 100%;
     height: auto;
     background: rgba(255, 255, 255, .7);
@@ -184,12 +89,7 @@
     align-items: center;
     border: .5px solid rgba(0, 0, 0, .4);
 }
-.item-list-data:nth-child(17){
-    border-bottom-left-radius: 18px;
-}
-.item-list-data:nth-child(18){
-    border-bottom-right-radius: 18px;
-}
+
 @media screen and (min-width:600px) {
     .item-list {
         width: 85%;

@@ -21,9 +21,9 @@
         <span class="icon-bars" id="btn-menu"></span>
         <nav id="navegador">
             <ul>
-                <li class="item-link">Bienvenido {{ request.user.first_name}}  </li>
+                    <li><a    class="item-link item-welcome">Bienvenido! {{ request.user.first_name}} </a></li>
                 <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
-                <li><a href="#" class="item-link">Folios</a></li>
+                <li><a href="{% url 'listar_folios' %}"  class="item-link">Folios</a></li>
                 {% if user.is_superuser %}
                 <li><a href="{% url 'listar_tecnicos' %}" id="select"  class="item-link">Asignar</a></li>
                 {% endif %}

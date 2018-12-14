@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404,redirect#Y29waW9u 
-from .models import Tecnico,Empresa_tecnico,Cliente
+from .models import Tecnico,Empresa_tecnico,Cliente,Folio
 from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
@@ -152,5 +152,31 @@ def crear_cliente(request):
             form = ClienteForm()           
         context={'form':form}
         return render(request,'rosnecsa/crear_cliente.html',context)
+def listar_folios(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
 
+        if  not request.user.is_superuser:
+
+                tecnico = Tecnico.objects.get(email_tecnico = request.user.email)
+                rut_tec = Tecnico.objects.filter(rut_tecnico=tecnico).values("rut_tecnico")
+                folios = Folio.objects.filter(receptor_trabajo_folio__in=rut_tec)
+            
+                context = {'folios':folios}
+                return render(request,'rosnecsa/listar_folios.html',context)
+
+        elif request.user.is_superuser:
+
+            todos_folios = Folio.objects.all()
+            context = {'todos_folios':todos_folios}
+            return render(request,'rosnecsa/listar_folios.html',context)
+
+def detalle_folio(request,pk):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        folio = get_object_or_404(Folio,pk=pk)
+        context = {'folio':folio}
+        return render(request,'rosnecsa/detalle_folio.html',context)
     #mira estos if que hare son para qe un wn q no este registrado no pueda hacer esto mira estas?si
