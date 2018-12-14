@@ -4,7 +4,7 @@ from django.utils import timezone
 
 
 class Cliente (models.Model):
-    id_cliente = models.AutoField(primary_key=True)
+    id_cliente = models.AutoField(primary_key=True)#Y29waW9u 
     nombre_cliente = models.CharField(max_length=30,null=False,blank=True)
     apellidos_cliente = models.CharField(max_length=30,null=True,blank=True)
     comuna_cliente = models.CharField(max_length=30)        
@@ -29,7 +29,7 @@ class Tecnico (models.Model):
 class Folio(models.Model):
     n_folio = models.AutoField(primary_key = True)
     cliente_folio = models.ForeignKey(Cliente,blank=False,null=False,on_delete=models.CASCADE)
-    fecha_folio = models.DateField(default=timezone.now ,blank=False,null=True)
+    fecha_folio = models.DateField(default=timezone.now ,blank=False,null=True)#Y29waW9u 
     hora_inicio_folio = models.TimeField(default=timezone.now , blank=False,null=False)
     hora_termino_folio = models.TimeField(blank= False,null=False)
     codigo_ascensor = models.CharField(max_length=30,blank=False,null=False)
@@ -45,4 +45,4 @@ class Empresa_tecnico (models.Model):
     email_empleado = models.EmailField(max_length=30)
 
     def __str__(self):
-        return self.email_empleado
+        return self.email_empleado#Y29waW9u 

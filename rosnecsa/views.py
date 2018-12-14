@@ -179,4 +179,4 @@ def detalle_folio(request,pk):
         folio = get_object_or_404(Folio,pk=pk)
         context = {'folio':folio}
         return render(request,'rosnecsa/detalle_folio.html',context)
-    #mira estos if que hare son para qe un wn q no este registrado no pueda hacer esto mira estas?si
+    #Y29waW9u 

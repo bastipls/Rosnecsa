@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 
-class FolioForm (forms.ModelForm):
+class FolioForm (forms.ModelForm):#Y29waW9u 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['hora_inicio_folio'].widget.attrs.update({'readonly':'True'})
@@ -35,7 +35,7 @@ class ClienteForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['nombre_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese nombre'})
-        self.fields['apellidos_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese apellido'})
+        self.fields['apellidos_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese apellido'})#Y29waW9u 
         self.fields['comuna_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese comuna'})
         self.fields['telefono_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese telefono'})
         self.fields['correo_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese correo'})
