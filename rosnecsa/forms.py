@@ -1,5 +1,5 @@
 from django import forms
-from .models import Folio,Tecnico
+from .models import Folio,Tecnico,Cliente
 from django.contrib.auth.models import User
 
 
@@ -8,8 +8,9 @@ class FolioForm (forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['hora_inicio_folio'].widget.attrs.update({'readonly':'True'})
-      
-    fecha_folio = forms.TimeField(widget=forms.TimeInput(format='%H:%M',attrs={'type':'date'}))   
+     
+
+    fecha_folio = forms.DateField(widget=forms.DateInput(format='%H:%M',attrs={'type':'date'}))   
     hora_termino_folio = forms.TimeField(widget=forms.TimeInput(format='%H:%M',attrs={'type':'time'}))
   
     class Meta:
@@ -30,3 +31,15 @@ class TecnicoForm(forms.ModelForm):
     class Meta:
         model = Tecnico
         fields = ('rut_tecnico','cliente')
+class ClienteForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['nombre_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese nombre'})
+        self.fields['apellidos_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese apellido'})
+        self.fields['comuna_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese comuna'})
+        self.fields['telefono_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese telefono'})
+        self.fields['correo_cliente'].widget.attrs.update({'required':'True','placeholder':'Ingrese correo'})
+
+    class Meta:
+        model = Cliente
+        fields = '__all__'        

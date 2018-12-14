@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Listar cliente</title>
     <link rel="icon" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
@@ -14,15 +14,23 @@
 </head>
 
 <body>
-    <div class="menu-container">
+<div class="menu-container">
         <a href="{% url 'login' %}" class="container-icon"><!--Y29waW9u-->
-                  <p class="icon-text">ROSNECSA</p>
+                    <p class="icon-text">ROSNECSA</p>
         </a>
         <span class="icon-bars" id="btn-menu"></span>
         <nav id="navegador">
             <ul>
-                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
+                 <li><a    class="item-link item-welcome">Bienvenido! {{ request.user.first_name}} </a></li>
+                <li><a href="{% url 'listar_clientes' %}" id="select"  class="item-link">Clientes</a></li>
                 <li><a href="#" class="item-link">Folios</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'listar_tecnicos' %}" class="item-link">Asignar</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="{% url 'crear_cliente' %}" class="item-link">Crear cliente</a></li>
+                {% endif %}
+        
                 <li>
                     <form  action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
@@ -35,14 +43,15 @@
     <div class="general-container">
 
     <div class="container-gen">
-          <h1>Atender Clientes</h1>
-   
+         <h1>Atender Clientes</h1>   
                <div class="table-container">
+                   
                 <table class="table-client"><!--Y29waW9u-->
                     <tr>
                         <th>ID:</th>
                         <th>Nombre:</th>
                         <th>Comuna:</th>
+                        <th>Telefono:</th>
                         <th>Correo:</th>
                         <th>Confirmar</th>
                     </tr>
@@ -52,6 +61,7 @@
                         <td>{{ cliente.id_cliente }}</td>
                         <td>{{ cliente.nombre_cliente }}</td>
                         <td>{{ cliente.comuna_cliente }}</td>
+                        <td>{{ clientes.telefono_cliente }}</td>
                         <td>{{ cliente.correo_cliente }}</td>
                         <td><a href="{% url 'crear_folio' %}">Orden</a></td>
                     </tr>
@@ -63,10 +73,11 @@
                         <td>{{ clientes.id_cliente }}</td>
                         <td>{{ clientes.nombre_cliente }}</td>
                         <td>{{ clientes.comuna_cliente }}</td>
+                        <td>{{ clientes.telefono_cliente }}</td>
                         <td>{{ clientes.correo_cliente }}</td>
                         <td><a href="{% url 'crear_folio' %}">Orden</a></td>    
                     </tr>
-                    {% endfor %}}
+                    {% endfor %}
                     {% endif %}
                
             

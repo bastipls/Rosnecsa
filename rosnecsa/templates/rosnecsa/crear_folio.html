@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Crear folio</title>
     <link rel="icon" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
@@ -21,8 +21,16 @@
         <span class="icon-bars" id="btn-menu"></span>
         <nav id="navegador">
             <ul>
-                <li><a href="{% url 'listar_clientes' %}" class="item-link">Clientes</a></li>
+                    <li><a    class="item-link item-welcome">Bienvenido! {{ request.user.first_name}} </a></li>
+                <li><a href="{% url 'listar_clientes' %}" id="select"  class="item-link">Clientes</a></li>
                 <li><a href="#" class="item-link">Folios</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'listar_tecnicos' %}" class="item-link">Asignar</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="{% url 'crear_cliente' %}" class="item-link">Crear cliente</a></li>
+                {% endif %}
+                
                 <li>
                     <form  action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
@@ -59,7 +67,7 @@
             <div class="item-input">
                 <label for="{{ form.hora_termino_folio.id_for_label }}">Hora Termino:</label>
                 {{ form.hora_termino_folio  }}
-                {{ value|time:"H:i"}}
+            
             </div>
             {{ form.codigo_ascensor.errors }}
             <div class="item-input">
